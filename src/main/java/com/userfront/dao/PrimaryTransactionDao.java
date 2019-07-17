@@ -1,9 +1,10 @@
 package com.userfront.dao;
 
-import com.userfront.domain.PrimaryTransaction;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
+import com.userfront.domain.PrimaryTransaction;
 
 public interface PrimaryTransactionDao extends CrudRepository<PrimaryTransaction, Long> {
 

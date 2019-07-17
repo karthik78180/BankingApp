@@ -1,9 +1,10 @@
 package com.userfront.dao;
 
-import com.userfront.domain.Recipient;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
+import com.userfront.domain.Recipient;
 
 public interface RecipientDao extends CrudRepository<Recipient, Long> {
     List<Recipient> findAll();

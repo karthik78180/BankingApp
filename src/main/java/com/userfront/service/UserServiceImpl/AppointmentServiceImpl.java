@@ -1,12 +1,13 @@
 package com.userfront.service.UserServiceImpl;
 
-import com.userfront.dao.AppointmentDao;
-import com.userfront.domain.Appointment;
-import com.userfront.service.AppointmentService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.userfront.dao.AppointmentDao;
+import com.userfront.domain.Appointment;
+import com.userfront.service.AppointmentService;
 
 @Service
 public class AppointmentServiceImpl implements AppointmentService {

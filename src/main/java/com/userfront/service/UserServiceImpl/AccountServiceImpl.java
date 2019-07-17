@@ -1,17 +1,22 @@
 package com.userfront.service.UserServiceImpl;
 
-import com.userfront.dao.PrimaryAccountDao;
-import com.userfront.dao.SavingsAccountDao;
-import com.userfront.domain.*;
-import com.userfront.service.AccountService;
-import com.userfront.service.TransactionService;
-import com.userfront.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.userfront.dao.PrimaryAccountDao;
+import com.userfront.dao.SavingsAccountDao;
+import com.userfront.domain.PrimaryAccount;
+import com.userfront.domain.PrimaryTransaction;
+import com.userfront.domain.SavingsAccount;
+import com.userfront.domain.SavingsTransaction;
+import com.userfront.domain.User;
+import com.userfront.service.AccountService;
+import com.userfront.service.TransactionService;
+import com.userfront.service.UserService;
 
 @Service
 public class AccountServiceImpl implements AccountService {

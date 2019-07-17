@@ -1,9 +1,10 @@
 package com.userfront.dao;
 
-import com.userfront.domain.SavingsTransaction;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
+import com.userfront.domain.SavingsTransaction;
 
 public interface SavingsTransactionDao extends CrudRepository<SavingsTransaction, Long> {
 

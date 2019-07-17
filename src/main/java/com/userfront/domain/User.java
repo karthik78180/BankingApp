@@ -1,16 +1,26 @@
 package com.userfront.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.userfront.domain.security.Authority;
-import com.userfront.domain.security.UserRole;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.userfront.domain.security.Authority;
+import com.userfront.domain.security.UserRole;
 
 @Entity
 public class User implements UserDetails{
@@ -26,26 +36,6 @@ public class User implements UserDetails{
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", enabled=" + enabled +
-                ", primaryAccount=" + primaryAccount +
-                ", savingsAccount=" + savingsAccount +
-                ", appointmentList=" + appointmentList +
-                ", recipientList=" + recipientList +
-                ", userRoles=" + userRoles +
-                '}';
-    }
-
     private String phone;
 
     private boolean enabled=true;
@@ -167,6 +157,21 @@ public class User implements UserDetails{
         this.enabled = enabled;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", appointmentList=" + appointmentList +
+                ", recipientList=" + recipientList +
+                ", userRoles=" + userRoles +
+                '}';
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
